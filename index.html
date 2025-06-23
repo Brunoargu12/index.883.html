@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('imagens/fundo_login_coracoes.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+    }
+    #mensagemErro {
+      color: pink;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vinda 🌸</h1>
+  <input type="text" id="nome" placeholder="Digite seu nome">
+  <input type="text" id="data" placeholder="Digite sua data (24/06)">
+  <button onclick="verificarLogin()">Entrar</button>
+  <div id="mensagemErro"></div>
+
+  <script>
+    function verificarLogin() {
+      const nome = document.getElementById('nome').value.toLowerCase();
+      const data = document.getElementById('data').value;
+      if ((nome === 'micaela') && data === '24/06') {
+        window.location.href = 'mensagem.html';
+      } else {
+        document.getElementById('mensagemErro').innerText = 'Você não é a mais mais';
+      }
+    }
+  </script>
+</body>
+</html>
